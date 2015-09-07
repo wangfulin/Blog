@@ -3,6 +3,7 @@
 ### 一，字体基本概念的介绍
 
 #### 1.1 字体的分类
+***
 ##### 1.1.1 Serif（衬线体）
 	Serif（衬线）：在印刷的文字中衬线字体对于人眼的辨识更轻松，阅读更舒服横细竖粗，开始和结束的地方有装饰。在web上的字体，衬线字体比无衬线字体的辨识度更低，因为屏幕像素有限，不能很好地渲染出衬线体的效果。
 ##### 1.1.2 Sans-Serif（无衬线体)
@@ -56,32 +57,34 @@
 ##### 2.5.1 使用link标签
 	通过link导入样式，然后直接通过font-family使用，如：
 `<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>`
+
 `font-family:"lobster"`
 
 参考[Google Fonts](https://www.google.com/fonts)
 ##### 2.5.2 使用@import导入
 	通过@import导入字体的样式，如：
 `@import url(https://fonts.googleapis.com/css?family=Candal);`
+
 `font-family:"Candal"`
 
 参考[Google Fonts](https://www.google.com/fonts)
 ##### 2.5.3 使用javascript
 	通过javascript获取字体样式，如：
-`<script type="text/javascript">
-			  WebFontConfig = {
-				google: { families: [ 'Shadows+Into+Light::latin' ] }
-			  };
-			  (function() {
-				var wf = document.createElement('script');
-				wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+	<script type="text/javascript">
+		 WebFontConfig = {
+			google: { families: [ 'Shadows+Into+Light::latin' ] }
+		};
+		(function() {
+			var wf = document.createElement('script');
+			wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
 				  '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-				wf.type = 'text/javascript';
-				wf.async = 'true';
-				var s = document.getElementsByTagName('script')[0];
-				s.parentNode.insertBefore(wf, s);
-			  })(); 
-		</script>
-`
+			wf.type = 'text/javascript';
+			wf.async = 'true';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(wf, s);
+		})(); 
+	</script>
+
 `font-family:"Shadows Into Light"`
 
 参考[Google Fonts](https://www.google.com/fonts)
