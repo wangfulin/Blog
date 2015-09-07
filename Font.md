@@ -106,3 +106,10 @@
 	3.京东：font-family: Arial, Verdana, 宋体；
 	4.Youtube：font-family: Roboto, arial, sans-serif;
 	5.github：font-family: Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
+参考的网站：
+
+[creating good websites](http://www.leafdigital.com/class/lessons/graphicdesign1/4.html)
+
+[serif和sans-serif的区别](http://kb.cnblogs.com/page/192018/)
+
+[中文字体网页开发指南](http://www.ruanyifeng.com/blog/2014/07/chinese_fonts.html)
