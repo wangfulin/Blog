@@ -11,6 +11,7 @@
 * [bower](https://github.com/bower/bower)
 * [yeoman](https://github.com/yeoman/yeoman)
 * [Phantomjs](https://github.com/sgentle/phantomjs-node)
+* [vuejs](https://github.com/vuejs)
 
 ## enhanced cmd
 * [cmder](http://cmder.net)
