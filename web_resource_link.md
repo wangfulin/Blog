@@ -12,6 +12,7 @@
 * [yeoman](https://github.com/yeoman/yeoman)
 * [Phantomjs](https://github.com/sgentle/phantomjs-node)
 * [vuejs](https://github.com/vuejs)
+* [homebrew](https://github.com/Homebrew)
 
 ## enhanced cmd
 * [cmder](http://cmder.net)
