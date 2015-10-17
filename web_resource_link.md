@@ -13,6 +13,7 @@
 * [Phantomjs](https://github.com/sgentle/phantomjs-node)
 * [vuejs](https://github.com/vuejs)
 * [homebrew](https://github.com/Homebrew)
+* [jekyll](https://github.com/jekyll/jekyll)
 
 ## enhanced cmd
 * [cmder](http://cmder.net)
