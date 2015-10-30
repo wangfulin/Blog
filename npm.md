@@ -21,9 +21,12 @@
 	* npm config edit，更改配置文件
 5. npm init，可以通过命令行来初始化package.json文件
 4. npm list，显示所有安装的包
+	- npm list -g 全局安装的模块
+	- npm list -g --depth=0 不显示模块的依赖
 5. npm root 查看当前包的安装路径
 6. npm root -g 查看全局包的安装入境
 7. npm [packagename] help,获取帮助
 8. npm outdated，查看所有过时的包
 9. npm prune，移除不再依赖的包
 10. npm search,查找相应的包
+11. npm cache clean,删除cache,即npm config get cache这个文件夹存的缓存。
