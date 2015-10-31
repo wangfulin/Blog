@@ -24,7 +24,7 @@ CSS
 
 ![square](imgs\circular-image-with-css\circular-image-square.png)
 
-## 正方形图片
+## 长方形图片
 
 长方形图片会稍微有一点技巧一点。
 
