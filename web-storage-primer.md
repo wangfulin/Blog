@@ -68,6 +68,7 @@ localStorage和sessionStorage分享一套javascript方法（比如说：`getItem
 Caniuse.com的结论是Web Storage有良好的浏览器支持。
 
 Web Storage浏览器支持表
+
 |浏览器|版本|
 |:-----|:----|
 |Internet Explorer|IE8及IE8以上|
