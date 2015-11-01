@@ -69,7 +69,7 @@ Caniuse.com的结论是Web Storage有良好的浏览器支持。
 
 Web Storage浏览器支持表
 |浏览器|版本|
-|-----|----|
+|:-----|:----|
 |Internet Explorer|IE8及IE8以上|
 |Mozilla Firefox|Firefox 3.5及以上|
 |Google Chrome|Chrome 4及以上|
