@@ -49,4 +49,37 @@ sessionStorage   只在回话中保存     键值对  字符串
 
 localStorage     持久保存      键值对   字符串
 
+### sessionStorage
+
+sessionStorage是设计用来保存浏览器会话这个时间段的客户端数据的。换句话说数据只在用户还在网站浏览的时候才保存起来。
+
+sessionStorage在实践中主要用来暂时的数据 存储。比如说，用户在网页表单上的输入能够在用户浏览器会话的阶段保存在sessionStorage对象当中。这样的话，数据就能够在浏览的整个过程中获得到而不需要把数据存储到服务器当中。也就是说，当用户不小心关闭或者刷新浏览器窗口，暂时的数据存储可以防止用户不得不重复输入数据。
+
+### localStorage
+
+从实现的角度来说，localStorage和sessionStorage的实现方式是基本类似的。
+
+localStorage和sessionStorage分享一套javascript方法（比如说：getItem,setItem等等），并且它也以键值对的方式存储数据。
+
+但是，把数据存储在localStorage对象上意味着数据可以在用户的会话之间一直保存着。换句话说，数据可以在用户下一次访问这个网站的时候依然可以获取到。
+
+## Web Storage的浏览器支持
+
+Caniuse.com的结论是Web Storage有良好的浏览器支持。
+
+Web Storage浏览器支持表
+
+目前，Web Storage标准是*W3C Candidate Recommendation*.总共有五个级别的推荐。"Candidate Recommendation"是这五个级别中的第三个级别。目前的Web Storage已经相当成熟因为这已经不是一个工作草案啦，但是与此同时，这个也不是最终的方案。
+
+支持旧的没有Web Storage这个特性的浏览器可以通过使用polyfill来支持。对于localStorage的支持可以选择[Store.js](https://github.com/marcuswestin/store.js)。
+
+##　数据隐私和安全考虑
+
+
+
+
+
+## 原文链接
+[web-storage-primer](http://sixrevisions.com/web-technology/web-storage-primer/)
+
 
