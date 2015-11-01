@@ -42,12 +42,12 @@ W3C Web Storage标准并没有推荐一个默认的存储限制，让浏览器�
 
 ## Storage的种类
 
-Web Storage有两种方式来存储客户端数据：sessionStorage和localStorage.
+Web Storage有两种方式来存储客户端数据：sessionStorage和localStorage.     
 
-**Web Storage** **存储数据的生命周期**  **数据结构** **数据类型**
-sessionStorage   只在回话中保存     键值对  字符串
-
-localStorage     持久保存      键值对   字符串
+| **Web Storage** |**存储数据的生命周期** |  **数据结构** | **数据类型** |
+|---------------- |---------------------|--------:|--------:|
+| sessionStorage  |  只在回话中保存      | 键值对  | 字符串 |
+| localStorage    |  持久保存       |   键值对 | 字符串 |
 
 ### sessionStorage
 
@@ -59,7 +59,7 @@ sessionStorage在实践中主要用来暂时的数据 存储。比如说，用�
 
 从实现的角度来说，localStorage和sessionStorage的实现方式是基本类似的。
 
-localStorage和sessionStorage分享一套javascript方法（比如说：getItem,setItem等等），并且它也以键值对的方式存储数据。
+localStorage和sessionStorage分享一套javascript方法（比如说：`getItem`,`setIte`m等等），并且它也以键值对的方式存储数据。
 
 但是，把数据存储在localStorage对象上意味着数据可以在用户的会话之间一直保存着。换句话说，数据可以在用户下一次访问这个网站的时候依然可以获取到。
 
@@ -68,6 +68,13 @@ localStorage和sessionStorage分享一套javascript方法（比如说：getItem,
 Caniuse.com的结论是Web Storage有良好的浏览器支持。
 
 Web Storage浏览器支持表
+|浏览器|版本|
+|-----|----|
+|Internet Explorer|IE8及IE8以上|
+|Mozilla Firefox|Firefox 3.5及以上|
+|Google Chrome|Chrome 4及以上|
+|Apple Safari|Safari 4及以上|
+|Opera|Opera 11.5及以上|
 
 目前，Web Storage标准是*W3C Candidate Recommendation*.总共有五个级别的推荐。"Candidate Recommendation"是这五个级别中的第三个级别。目前的Web Storage已经相当成熟因为这已经不是一个工作草案啦，但是与此同时，这个也不是最终的方案。
 
@@ -75,9 +82,27 @@ Web Storage浏览器支持表
 
 ##　数据隐私和安全考虑
 
+Ｗeb Storage和cookies有一样的禁止跨域的策略。这意味着一个网站的Web Storage不能被其他网站访问。这对于数据安全来说是有益的。但是这也导致了我们在需要子域的时候出现问题。对于这个问题，有其他的解决方案，比如由Zendesk开发的一个开源包[Cross-Storage](https://github.com/zendesk/cross-storage)。
 
+就像任何其他的客户端数据存储机制一样，保护存储的数据也是一个很重要的需要考虑的点。保存用户私密或者敏感的数据是不推荐的。这也让能够接触设备的人更方便的获取到本地数据。尤其是在一些其他人可以用公共的网络环境比如大学，图书馆，工作电脑等访问你的网站的地方更应该格外小心。
 
+数据完备性也是一个考虑因素。必须要有在存储事务失败的时候的解决方案。当用户的Web Storage被关闭时候，或者当用户的存储空间不足的时候，或者超过浏览器的Web Storage限制的时候都有可能造成失败。Web Storage规范说明了当触发存储失败事件的标准的错误/警告输出，比如QuotaExceededError异常。
 
+## IndexedDB怎么样呢？
+
+对于客户端存储来说，[Indexed Database API](http://www.w3.org/TR/IndexedDB/)(IndexedDB)提供了很多可以从Web Storage衍生出来的相同的有点。但是IndexedDB不是Web Storage规范的一部分所以这也超出了我们所要讨论的范围。
+
+但是。IndexedDB也很值得我们简单的聊一下，因为它和Web Storage实现有很多共享的特点以及未来可能有联系的可能。
+
+通过IndexedDB存储数据相对于Web Storage来说可能会更加复杂一些。但是，它也打开了通往更加复杂数据结构和关系的大门。
+
+通过IndexedDB，数据会像你喜欢的客户端数据管理系统比如`MYSQL`,`MSSQ`L,`PostgreSQ`L等等数据库一样通过索引存储起来
+
+**相关：[最好的五中数据库管理工具](http://sixrevisions.com/tools/top-five-best-database-management-tools/)**
+
+除此之外，如果你实现了一个可以处理IndexedDB数据库的查询语言，你也可以想服务端数据库一样检索数据库。
+
+相对于IndexedDB来说，Web Storage的数据获取能力是很基础的。Web Storage只有两个内置的获取数据的方法：`.getItem`和`.key`。（除了能够可以获取Web Storage对象的`length`属性）。因此，当你考虑到需要更加复杂的数据存储的时候，你可以考虑IndexedDB而不是Web Storage。
 
 ## 原文链接
 [web-storage-primer](http://sixrevisions.com/web-technology/web-storage-primer/)
