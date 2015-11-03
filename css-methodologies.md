@@ -86,3 +86,4 @@ OOCSS鼓励结构和表面的分离。这个方法论在内容和容器之间有
 OOCSS方法论这样做的最大好处就是它能够让作者最大的利用CSS层叠的样式的好处，而不是把它锁在高度具体的选择器中。
 
 **相关：**[CSS特性是怎么工作的？](http://sixrevisions.com/css/css-specificity/)
+
