@@ -87,3 +87,170 @@ OOCSS方法论这样做的最大好处就是它能够让作者最大的利用CSS
 
 **相关：**[CSS特性是怎么工作的？](http://sixrevisions.com/css/css-specificity/)
 
+作者鼓励我们无论何时都去复用已有的样式而不是创建新的样式。我们也被鼓励通过新的类来扩展样式而不是修改或者覆盖已有的CSS样式。
+
+### 反例
+
+HTML
+
+	<!-- 反例  -->
+	<ul class="to-do">
+		<li>Combine my CSS files</li>
+		<li>Run CSS Lint</li>
+		<li>Minify my stylesheet</li>
+	</ul>
+
+CSS
+ 
+ 	/*  反例 */
+ 	.to-do{
+ 		color:#FFF;
+ 		background-color:#000;
+ 	}
+ 	.to-do li:first-child{
+ 		color:#FF0000;
+ 	}
+ 	
+OOCSS例子
+
+为了让我们的CSS更具模块化和灵活度，并且防止出现后代选择器，我们用下面的方式来复写上面的反例：
+
+HTML
+
+	<!-- OOCSS -->
+	<ul class="to-do">
+ 		 <li class="first-to-do-	item">Combine my CSS files</li>
+  		<li>Run CSS Lint</li>
+  		<li>Minify my stylesheet</li>
+	</ul>
+	
+CSS
+
+	/* OOCSS */
+	.to-do {
+ 		 color: #FFF;
+ 		 background-color: #000;
+	}
+	.first-to-do-item {
+  		color: #FF0000;
+	}
+	
+OOCSS的弱点是你很可能会使用很多很多的类，到最后你都无法维护或管理啦。
+
+并且，在我看来，让OOCSS产生灵感的面向对象编程的思想在CSS中并不契合。
+
+但是，这并不是说OOCSS的原则是无效的。相反，OOCSS是把大型CSS开发带来理性的常用的CSS方法论.
+
+## 块，元素，修饰符
+
+![block,element,modifier](imgs/css-methodologies/bem-methodology.png)
+
+块，元素，修饰符－－更常被叫做BEM--是一个由被称为俄罗斯的谷歌的Yandex开发组开发的一套CSS体系。
+
+在BEM背后的思想是区分实现不同角色的CSS类。这是通过把CSS命名为表示其角色的类名。
+
+BEM刚好可以作为OOCSS的补充，因为OOCSS并没有施加任何的命名规范。
+
+在BEM的方法论中，一个**块**是一个独立的模块好的UI组件。一个块可以由多个HTML元素组成，甚至有几个块组合而成。比如说导航菜单和搜索表单就是一个块的例子。
+
+一个**元素**就是块的一个组件。一个元素一般用来完成一个目的。比如说，你有一个导航菜单块，那导航菜单的链接就是元素，它可以使一个列表项(li元素)或者链接(a元素).
+
+一个修饰符是用来改变块或者元素默认样式的CSS类。
+
+喜爱案就是BEM类命名的语法：
+
+- .block
+- .block--modifier
+- .block__element
+- .block__element--modifier
+
+### 反例
+
+考虑下面的例子，标记代表的是一个登录表单：
+
+HTML
+
+	<form>
+		<label>
+		username <input type="text" name="username" />
+		</label>
+		<label>
+			password <input type="password" name="password" />
+		</label>
+		<button>
+			Sign in
+		</button>
+	</form>
+	
+### BEM范例
+
+下面是使用BEM命名规则来为上面的标记命名：
+
+HTML
+
+	<form class="loginform loginform--errors">
+ 	   <label class="loginform__username loginform__username--error">
+    Username <input type="text" name="username" />
+ 	   </label>
+ 	   <label class="loginform__password">
+    Password <input type="password" name="password" />
+ 	   </label>
+	   <button class="loginform__btn loginform__btn--inactive">
+   			 Sign in
+ 	   </button>
+	</form>
+	
+这个.loginform类是一个块。
+这个.loginform块由三个元素组成：
+
+|       **元素**     |**作用**|
+|:-------------------|--------|
+|loginform__username|代表用户名  |
+|loginform__password|  代表密码  |
+|loginform__btn     |用户点击提交表单|
+
+这三个修饰符分别是：
+
+|**修饰符**|**描述**|
+|---------|-------|
+|.loginform__username--errror|错误时的样式|
+|.loginform__btn--inactive|未激活样式|
+|.loginform--errors|包含错误的样式|
+
+这种BEM的命名规则帮助CSS的作者遵循OOCSS的原则。通过使用这种扁平的命名方式避免了多后代的选择器。
+
+### 反例
+
+所以我们不会用下面这种样式命名规则。。。
+
+CSS
+
+	.loginform .username .error{
+		...
+	}
+	
+### BEM范例
+
+。。。你只需要一个类选择器：
+
+CSS
+
+	.loginform__username--error{
+		...
+	}
+	
+BEM是一个非常鲁棒的命名规范。
+
+它成功地区分了类的不同关注点。并且通过类名我们可以很简单的看到标记之间的关系。
+
+一些关于BEM的主观批评如下：
+
+- 类名会变的很长很难看
+- 命名规范对于没有经验的开发者来说不是那么的好理解
+
+作为个人来讲，我倒不认为这是特别强烈的批评。但是如果有一个能够和BEM一样鲁棒的命名规范同时能够更简洁和好理解那就更好啦。
+
+待续。。。
+
+
+
